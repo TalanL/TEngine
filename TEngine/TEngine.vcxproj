@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AI\AStar\AStar.cpp" />
+    <ClCompile Include="AI\StateMachine\FiniteStateMachine.cpp" />
+    <ClCompile Include="GameObject\Component.cpp" />
+    <ClCompile Include="DebugShapes.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="AI\AStar\GameNode.cpp" />
+    <ClCompile Include="AI\AStar\GameConnection.cpp" />
+    <ClCompile Include="GameObject\GameObject.cpp" />
+    <ClCompile Include="GameObject\Components\HealthComponent.cpp" />
+    <ClCompile Include="Input\KeyInput.cpp" />
+    <ClCompile Include="Level.cpp" />
+    <ClCompile Include="LevelLoader.cpp" />
+    <ClCompile Include="GameObject\Components\PhysicsComponent.cpp" />
+    <ClCompile Include="Render\Renderer.cpp" />
+    <ClCompile Include="GameObject\Components\RendererComponent.cpp" />
+    <ClCompile Include="AI\StateMachine\State.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AI\AStar\AStar.h" />
+    <ClInclude Include="AI\StateMachine\FiniteStateMachine.h" />
+    <ClInclude Include="GameObject\Component.h" />
+    <ClInclude Include="debugInfo.h" />
+    <ClInclude Include="DebugShapes.h" />
+    <ClInclude Include="ExportHeader.h" />
+    <ClInclude Include="AI\AStar\GameNode.h" />
+    <ClInclude Include="AI\AStar\GameConnection.h" />
+    <ClInclude Include="GameObject\GameObject.h" />
+    <ClInclude Include="Render\GeometryInfo.h" />
+    <ClInclude Include="GameObject\Components\HealthComponent.h" />
+    <ClInclude Include="Input\IKeyMapper.h" />
+    <ClInclude Include="Input\KeyInput.h" />
+    <ClInclude Include="Level.h" />
+    <ClInclude Include="LevelLoader.h" />
+    <ClInclude Include="miscTypeDef.h" />
+    <ClInclude Include="ParameterType.h" />
+    <ClInclude Include="GameObject\Components\PhysicsComponent.h" />
+    <ClInclude Include="RandomNum.h" />
+    <ClInclude Include="Render\RenderableInfo.h" />
+    <ClInclude Include="Render\Renderer.h" />
+    <ClInclude Include="GameObject\Components\RendererComponent.h" />
+    <ClInclude Include="Render\ShaderInfo.h" />
+    <ClInclude Include="Render\ShaderUniformParameter.h" />
+    <ClInclude Include="AI\StateMachine\State.h" />
+    <ClInclude Include="Render\TextureInfo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\TestDebugShapes\TestDebugShapes\cube.bin">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{BC058962-72D2-4798-82F9-29567DDAF544}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>TEngine</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(SolutionDir)..\LightCycles\LightCycles\TalanPropSheet.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(SolutionDir)..\LightCycles\LightCycles\TalanPropSheet.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IntDir>$(SolutionDir)\Temp\$(Configuration)\Intermediates\$(ProjectName)\</IntDir>
+    <TargetExt>.dll</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;ENGINE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\MidWear\glew\include;$(SolutionDir)..\MidWear\glm\glm;$(SolutionDir)..\MidWear\NeumontTools\include;$(SolutionDir)..\MidWear\Qt\include;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DisableSpecificWarnings>4127;4201;4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <UndefinePreprocessorDefinitions>
+      </UndefinePreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\MidWear\Qt\lib;$(SolutionDir)..\MidWear\glew\lib;$(SolutionDir)..\MidWear\NeumontTools\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>NeumontTools.lib;opengl32.lib;glew32d.lib;QtCored4.lib;QtGuid4.lib;QtOpenGLd4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
